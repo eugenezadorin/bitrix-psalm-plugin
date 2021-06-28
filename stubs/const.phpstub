@@ -1,0 +1,7 @@
+<?php
+
+const SITE_ID = 's1';
+const LANGUAGE_ID = 'ru';
+const SITE_DIR = '/';
+const SITE_TEMPLATE_ID = '.default';
+const SITE_TEMPLATE_PATH = '/bitrix/templates/.default';
