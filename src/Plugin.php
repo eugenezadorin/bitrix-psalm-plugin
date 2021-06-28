@@ -36,7 +36,14 @@ final class Plugin implements PluginEntryPointInterface
         $result = [];
         $files = scandir(__DIR__ . '/Hooks') ?: [];
         foreach ($files as $file) {
-            if ($file === '.' || $file === '..' || $file === 'Hook.php') continue;
+            if ($file === '.' || $file === '..') continue;
+
+            require_once (__DIR__ . '/Hooks/' . $file);
+
+            if ($file === 'Hook.php') {
+                continue;
+            }
+
             [$name, $ext] = explode('.', $file);
             $result[] = '\\Zadorin\\BitrixPsalmPlugin\\Hooks\\' . $name;
         }

@@ -6,6 +6,7 @@
 
 ```
 composer require zadorin/bitrix-psalm-plugin --dev
+./vendor/bin/psalm-plugin enable zadorin/bitrix-psalm-plugin
 ```
 
 ## Configure
@@ -16,7 +17,7 @@ Options `psalm.autoloader` and `bitrixDir` are important.
 <!-- <project-dir>/bitrix/psalm.xml -->
 <?xml version="1.0"?>
 <psalm
-    autoloader="vendor/Zadorin/bitrix-psalm-plugin/autoload.php"
+    autoloader="vendor/zadorin/bitrix-psalm-plugin/autoload.php"
     errorLevel="1"
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
