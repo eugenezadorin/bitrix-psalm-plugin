@@ -96,10 +96,11 @@ final class Plugin implements PluginEntryPointInterface
         }
 
         foreach ($modules as $module) {
-            if ($module === 'main') continue;
             if (in_array($module, $ignoredModules)) continue;
 
-            Loader::includeModule($module);
+            if ($module !== 'main') {
+                Loader::includeModule($module);
+            }
 
             $ormAnnotationsPath = self::getBitrixDirectory() . "/modules/$module/meta/orm.php";
             if (file_exists($ormAnnotationsPath)) {
